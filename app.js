@@ -10,10 +10,10 @@ const hpp =require('hpp');
 
 // Database Lib Import
 const mongoose =require('mongoose');
-const path = require("path");
-app.use(mongoSanitize());
-app.use(xss());
-app.use(hpp());
+const path = require("path")
+app.use(mongoSanitize())
+app.use(xss())
+app.use(hpp())
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb" }));
 app.use(bodyParser.json());
