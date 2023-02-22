@@ -6,7 +6,7 @@ const rateLimit =require('express-rate-limit');
 const mongoSanitize =require('express-mongo-sanitize');
 const xss =require('xss-clean');
 const hpp =require('hpp');
-
+const cors = require("cors")
 
 // Database Lib Import
 const mongoose =require('mongoose');
@@ -19,7 +19,7 @@ app.use(express.urlencoded({ limit: "50mb" }));
 app.use(bodyParser.json());
 const limiter= rateLimit({windowMs:15*60*1000,max:3000})
 app.use(limiter)
-
+app.use(cors())
 
 // Mongo DB Database Connection
 let URI="mongodb+srv://sunny21:.sunny21@cluster0.8owwoe7.mongodb.net/task-manager?retryWrites=true&w=majority";
